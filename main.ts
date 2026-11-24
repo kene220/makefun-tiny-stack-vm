@@ -12,7 +12,7 @@ function run(p, inp) {
  const n = p.length;
  const D = new Int32Array(256), C = new Int32Array(64), M = new Int32Array(256), O = new Uint8Array(65536);
  let sp = 0, cs = 0, ol = 0, ip = 0, pc = 0, st = 0;
- const done = (c) => ({ o: O.slice(0, ol), c });
+ const done = (c) => ({ o: O.subarray(0, ol), c });
  for (;;) {
   if (st === 1e6) return done(10);
   if (pc < 0 || pc >= n) return done(9);
